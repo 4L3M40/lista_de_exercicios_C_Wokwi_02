@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "Evandro Wagencknecht",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 57.6, "left": -43.16, "attrs": {} },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -72.8,
+      "left": -132.18,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -74.4,
+      "left": 78.6,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pir1:VCC", "esp:5V", "red", [ "v240" ] ],
+    [ "pir1:GND", "esp:GND.1", "black", [ "v192", "h-0.26" ] ],
+    [ "esp:13", "pir1:OUT", "orange", [ "h-47.85" ] ],
+    [ "esp:12", "bz1:2", "red", [ "v-9.6", "h-19.05", "v-153.6", "h172.8" ] ],
+    [ "bz1:1", "esp:GND.1", "black", [ "v19.2", "h-182.4", "v182.4" ] ]
+  ],
+  "dependencies": {}
+}

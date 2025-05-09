@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "author": "Evandro Wagencknecht",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -326.4, "left": 120.04, "attrs": {} },
+    { "type": "wokwi-ili9341", "id": "lcd1", "top": -661.6, "left": 105.3, "attrs": {} },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir2",
+      "top": -408.8,
+      "left": -208.98,
+      "attrs": {}
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir3", "top": -620, "left": -208.98, "attrs": {} },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir4",
+      "top": -514.4,
+      "left": -208.98,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir5",
+      "top": -514.4,
+      "left": -103.38,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir6",
+      "top": -303.2,
+      "left": -208.98,
+      "attrs": {}
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir7", "top": -620, "left": -103.38, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir8", "top": -620, "left": -314.58, "attrs": {} },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir9",
+      "top": -514.4,
+      "left": -314.58,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir10",
+      "top": -408.8,
+      "left": -314.58,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir11",
+      "top": -303.2,
+      "left": -314.58,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -514.45,
+      "left": -192,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "h-19.2", "v220.8" ] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "h-28.8", "v345.6" ] ],
+    [ "pir8:VCC", "esp:5V", "red", [ "v9.6", "h307.2", "v393.6" ] ],
+    [ "pir3:VCC", "esp:5V", "red", [ "v9.6", "h201.6", "v393.6" ] ],
+    [ "pir7:VCC", "esp:5V", "red", [ "v9.6", "h96", "v393.6" ] ],
+    [ "pir9:VCC", "esp:5V", "red", [ "v9.6", "h307.2", "v288" ] ],
+    [ "pir4:VCC", "esp:5V", "red", [ "v9.6", "h201.6", "v288" ] ],
+    [ "pir5:VCC", "esp:5V", "red", [ "v9.6", "h96", "v288" ] ],
+    [ "pir10:VCC", "esp:5V", "red", [ "v9.6", "h307.2", "v182.4" ] ],
+    [ "pir2:VCC", "esp:5V", "red", [ "v9.6", "h201.6", "v182.4" ] ],
+    [ "pir11:VCC", "esp:5V", "red", [ "v9.6", "h307.2", "v76.8" ] ],
+    [ "pir6:VCC", "esp:5V", "red", [ "v9.6", "h201.6", "v76.8" ] ],
+    [ "pir8:GND", "esp:GND.1", "black", [ "v9.6", "h278.14", "v345.6" ] ],
+    [ "pir3:GND", "esp:GND.1", "black", [ "v9.6", "h172.54", "v345.6" ] ],
+    [ "pir7:GND", "esp:GND.1", "black", [ "v9.6", "h66.94", "v345.6" ] ],
+    [ "pir9:GND", "esp:GND.1", "black", [ "v9.6", "h278.14", "v240" ] ],
+    [ "pir4:GND", "esp:GND.1", "black", [ "v9.6", "h172.54", "v240" ] ],
+    [ "pir5:GND", "esp:GND.1", "black", [ "v9.6", "h66.94", "v240" ] ],
+    [ "pir10:GND", "esp:GND.1", "black", [ "v9.6", "h278.14", "v134.4" ] ],
+    [ "pir2:GND", "esp:GND.1", "black", [ "v9.6", "h172.54", "v134.4" ] ],
+    [ "pir11:GND", "esp:GND.1", "black", [ "v19.2", "h278.14", "v19.2" ] ],
+    [ "pir6:GND", "esp:GND.1", "black", [ "v19.2", "h172.54", "v19.2" ] ],
+    [ "esp:14", "pir8:OUT", "purple", [ "h-115.05", "v-326.4", "h-278.4" ] ],
+    [ "esp:27", "pir3:OUT", "purple", [ "h-115.05", "v-316.8", "h-172.66" ] ],
+    [ "esp:26", "pir7:OUT", "purple", [ "h-115.05", "v-316.8", "h268.8" ] ],
+    [ "esp:25", "pir9:OUT", "purple", [ "v0", "h-124.65", "v-192", "h-268.8" ] ],
+    [ "esp:33", "pir4:OUT", "purple", [ "h-124.65", "v-182.4", "h-163.2" ] ],
+    [ "esp:32", "pir5:OUT", "purple", [ "h-124.65", "v-172.8", "h-57.6" ] ],
+    [ "esp:16", "pir2:OUT", "purple", [ "h19.2", "v86.4", "h-249.6", "v-201.6", "h-153.6" ] ],
+    [
+      "esp:17",
+      "pir11:OUT",
+      "purple",
+      [ "h28.8", "v96", "h0", "v9.6", "h-268.8", "v-105.6", "h-249.6" ]
+    ],
+    [
+      "esp:21",
+      "pir6:OUT",
+      "purple",
+      [ "h38.4", "v163.2", "h-278.4", "v-115.2", "h-134.4", "v0", "h-9.6" ]
+    ],
+    [ "pir10:OUT", "esp:13", "purple", [ "v9.6", "h259.06", "v134.4" ] ],
+    [ "esp:5", "lcd1:CS", "white", [ "h19.2", "v-134.4", "h-201.6", "v-163.2", "h9.6" ] ],
+    [ "esp:2", "lcd1:D/C", "limegreen", [ "h9.6", "v-192", "h-38.4" ] ],
+    [ "esp:4", "lcd1:RST", "orange", [ "v-153.6", "h-38.4" ] ],
+    [ "esp:23", "lcd1:MOSI", "#8f4814", [ "h28.8", "v-67.2", "h-48", "v-19.2" ] ],
+    [ "esp:18", "lcd1:SCK", "cyan", [ "h28.8", "v-134.4", "h-38.4", "v-19.2" ] ]
+  ],
+  "dependencies": {}
+}
