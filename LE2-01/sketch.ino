@@ -1,5 +1,5 @@
 /*01) Utilize um sensor de temperatura (como o DHT11 ou DHT22) para monitorar a 
-temperatura em tempo ,real apresentando a temperatura e umidade na saída serial.*/
+temperatura em tempo real apresentando a temperatura e umidade na saída serial.*/
 
 #include <DHT.h>
 
